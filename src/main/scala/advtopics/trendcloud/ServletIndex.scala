@@ -13,7 +13,15 @@ import org.apache.velocity.app.Velocity
 import java.io.InputStreamReader
 import org.apache.velocity.VelocityContext
 import java.io.StringWriter
- 
+import org.reflections._
+import org.reflections.util.ConfigurationBuilder
+import java.util.Set
+import advtopics.trendcloud.controller.HandlerLoader
+import scala.collection.immutable.HashMap
+import collection.JavaConversions._
+import advtopics.trendcloud.controller.interfaces.RequestHandler
+import advtopics.trendcloud.controller.interfaces.RequestHandler
+
 class ServletIndex extends HttpServlet with Loggable{ 
    
   override def doGet(req: HttpServletRequest, res: HttpServletResponse) = { 
@@ -32,8 +40,14 @@ class ServletIndex extends HttpServlet with Loggable{
       
 	  logger.info(req.getServletPath());
 	  val controller =  new DefaultController
-	  val request = new SimpleRequest("iven")
-	  controller.addHandler(request, new ApplicationHandler)
+	  val request = new SimpleRequest(req.getServletPath(), req)
+
+	  val map:java.util.Map[String, Object] = new HandlerLoader().find()
+	  map.foreach{f => 
+	       var request2 = new SimpleRequest(f._1, req)
+	       controller.addHandler(request2, f._2.asInstanceOf[RequestHandler])
+	  }
+	  
 	  val response = controller.processRequest(request).asInstanceOf[SimpleResponse]
 	  logger.info(response.content)
 	  

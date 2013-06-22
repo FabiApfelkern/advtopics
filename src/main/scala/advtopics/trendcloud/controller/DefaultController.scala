@@ -9,8 +9,9 @@ import advtopics.trendcloud.controller.interfaces.Response
 
 class DefaultController extends Controller 
 { 
-  private val requestHandlers= new HashMap[String,RequestHandler]() 
-   
+   val requestHandlers= new HashMap[String,RequestHandler]() 
+  
+  
   def getHandler(request:Request): RequestHandler={ 
 	  
     if (!this.requestHandlers.containsKey(request.getName)){ 
