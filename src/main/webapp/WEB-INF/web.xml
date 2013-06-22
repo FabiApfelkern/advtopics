@@ -2,7 +2,7 @@
 <web-app> 
     <servlet> 
         <servlet-name>ServletIndex</servlet-name> 
-        <servlet-class>advtopics.beleg.ServletIndex</servlet-class> 
+        <servlet-class>advtopics.trendcloud.ServletIndex</servlet-class> 
     </servlet> 
     <servlet-mapping> 
         <servlet-name>ServletIndex</servlet-name> 
