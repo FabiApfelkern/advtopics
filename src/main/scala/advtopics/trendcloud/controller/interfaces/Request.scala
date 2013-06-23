@@ -4,5 +4,5 @@ import javax.servlet.http.HttpServletRequest
 
 trait Request {
 	def getReq:HttpServletRequest
-	def getName:String
+	def getUrl:List[String]
 }

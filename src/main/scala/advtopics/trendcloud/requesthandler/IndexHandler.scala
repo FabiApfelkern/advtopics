@@ -6,16 +6,18 @@ import advtopics.trendcloud.controller.interfaces.Request
 import advtopics.trendcloud.controller.SimpleResponse
 import advtopics.trendcloud.controller.Handler
 
-@Handler(url="/bjoern")
-class IvenHandler extends RequestHandler {
-  
+@Handler(url="")
+class IndexHandler extends RequestHandler {
+
   def process(request: Request): Response = {
-    var response = new SimpleResponse
+    val response = new SimpleResponse("index.html")
     
-    response.content = "Bjoern ist geil!"
-    
-    
-   response 
+    var output:Array[String] = Array("Eins", "Zwei", "Drei", "Vier")
+    response.setParameter("array", output)
+
+    response
   }
+  
+
 
 }

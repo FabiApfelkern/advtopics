@@ -6,16 +6,16 @@ import advtopics.trendcloud.controller.interfaces.Request
 import advtopics.trendcloud.controller.SimpleResponse
 import advtopics.trendcloud.controller.Handler
 
-@Handler(url="/iven")
+@Handler(url="iven")
 class ApplicationHandler extends RequestHandler {
-  
+
   def process(request: Request): Response = {
-    var response = new SimpleResponse
-    
-    response.content = "Iven ist geil!"
-    
-    
-   response 
+    val response = new SimpleResponse("output.html")
+    response.setParameter("content", "Hallo Welt")
+
+    response
   }
+  
+
 
 }
