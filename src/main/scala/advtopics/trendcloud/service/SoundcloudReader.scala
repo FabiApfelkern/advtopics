@@ -48,4 +48,8 @@ class SoundcloudReader extends ServiceReader {
 
   }
   
+  def fetch(): String = {
+    "Test Twitter!"
+  }
+  
 }

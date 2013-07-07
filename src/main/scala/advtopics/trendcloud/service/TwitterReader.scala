@@ -24,4 +24,8 @@ class TwitterReader extends ServiceReader {
     }
     trendsAsString
   }
+  
+  def fetch(): String = {
+    "Test Twitter!"
+  }
 }
