@@ -11,8 +11,14 @@ class Twitter extends Loggable {
   //println(placeTrends.toString())
   
   
-  def getPlaceTrendsByWOID(woid : Integer): Trends = {
-	  logger.info("Search for trends with woid: " +woid)
-	  twitter.getPlaceTrends(woid)
+  def getPlaceTrendsByWOEID(woeid : Integer): Array[String] = {
+	  logger.info("Search for trends with woid: " +woeid)
+	  val trends = twitter.getPlaceTrends(woeid)
+	  var trendsAsString:Array[String] = new Array[String](trends.getTrends().length)
+	  for(x <- trends.getTrends() ){
+	    logger.info("Trend: "+x.getName())
+	    trendsAsString.+(x.getName())
+	  }
+	  trendsAsString
   }
 }

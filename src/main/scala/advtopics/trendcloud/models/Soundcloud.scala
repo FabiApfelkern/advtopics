@@ -9,6 +9,9 @@ import com.soundcloud.api.Http
 
 import com.codahale.jerkson.Json._
 
+/**
+ * Loads musci from soundcloud.com
+ */
 class Soundcloud extends Loggable{
 
   /**

@@ -11,6 +11,7 @@ import advtopics.trendcloud.controller.HandlerLoader
 import advtopics.trendcloud.controller.SimpleRequest
 import advtopics.trendcloud.controller.interfaces.RequestHandler
 import advtopics.trendcloud.models.Soundcloud
+import advtopics.trendcloud.models.Twitter
 
 /**
  * This is the main entry point, all HTTP requests are processed here
@@ -29,8 +30,6 @@ class ServletIndex extends HttpServlet with Loggable {
   }
 
   override def doGet(req: HttpServletRequest, res: HttpServletResponse) = {
-    val sound = new Soundcloud
-    sound.searchForSoundsByKeyword("hey now")
     handleRequest(req, res)
   }
 
