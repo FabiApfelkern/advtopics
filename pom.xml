@@ -12,7 +12,6 @@
 		<scala.version>2.9.1</scala.version>
 	</properties>
 
-
 	<repositories>
 		<repository>
 			<id>scala-tools.org</id>
@@ -114,6 +113,12 @@
 			<version>2.0-beta4</version>
 		</dependency>
 
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-core-asl</artifactId>
+		<version>1.9.12</version>
+	</dependency>
+
 		<dependency>
 			<groupId>org.twitter4j</groupId>
 			<artifactId>twitter4j-core</artifactId>
@@ -141,7 +146,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>beleg</finalName>
+		<finalName>${app-name}</finalName>
 		<sourceDirectory>src/main/scala</sourceDirectory>
 		<testSourceDirectory>src/test/scala</testSourceDirectory>
 		<plugins>
@@ -192,7 +197,7 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<copy file="target/beleg.war" todir="C:/apache-tomcat-7.0.41/webapps" />
+								<copy file="target/${app-name}.war" todir="${tomcat-webapps}" />
 							</tasks>
 						</configuration>
 					</execution>
