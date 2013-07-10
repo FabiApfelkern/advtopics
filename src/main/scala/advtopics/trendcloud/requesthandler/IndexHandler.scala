@@ -12,7 +12,7 @@ import advtopics.trendcloud.models.Twitter
 class IndexHandler extends RequestHandler {
 
   def process(request: Request): Response = {
-    val response = new SimpleResponse("index.html")
+    val response = new SimpleResponse("index.vm")
     
     //var output:Array[String] = Array("Eins", "Zwei", "Drei", "Vier")
     val woeidOfBerlin:Integer = 638242
