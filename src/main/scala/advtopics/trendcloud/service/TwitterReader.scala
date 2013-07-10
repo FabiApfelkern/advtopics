@@ -26,6 +26,8 @@ class TwitterReader extends ServiceReader {
   }
   
   def fetch(): String = {
-    "Test Twitter!"
+    //val woeidOfBerlin:Integer = 638242
+    //fetch(woeidOfBerlin).toString()
+    "Test twitter!"
   }
 }

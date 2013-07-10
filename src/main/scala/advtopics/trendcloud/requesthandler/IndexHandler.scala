@@ -14,10 +14,10 @@ class IndexHandler extends RequestHandler {
   def process(request: Request): Response = {
     val response = new SimpleResponse("index.html")
     
-    var output:Array[String] = Array("Eins", "Zwei", "Drei", "Vier")
+    //var output:Array[String] = Array("Eins", "Zwei", "Drei", "Vier")
     val woeidOfBerlin:Integer = 638242
     val twitter = new Twitter
-    //var output = twitter.getPlaceTrendsByWOEID(woeidOfBerlin)
+    var output:Array[String] = twitter.getPlaceTrendsByWOEID(woeidOfBerlin)
     response.setParameter("array", output)
 
     response

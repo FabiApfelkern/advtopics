@@ -1,7 +1,8 @@
 package advtopics.trendcloud.service
 
-import com.google.inject.Guice 
+import com.google.inject.Guice
 import com.google.inject.Injector 
+import advtopics.trendcloud.models.Soundcloud
 
 /**
  * This Model factory returns specific objects to
@@ -18,6 +19,12 @@ object ModelFactory {
     val injector = Guice.createInjector(new ServiceBinder)
     val twitter = injector.getInstance(classOf[TwitterModel])
     twitter
+  }
+  
+  def getSoundcloudModel(): Soundcloud = {
+    val injector = Guice.createInjector(new ServiceBinder)
+    val soundcloud = injector.getInstance(classOf[Soundcloud])
+    soundcloud
   }
   
 }
