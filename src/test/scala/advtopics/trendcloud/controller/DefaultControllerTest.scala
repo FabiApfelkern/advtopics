@@ -14,6 +14,7 @@ class DefaultControllerTest {
   private class SampleRequest extends Request {
 	def getReq:HttpServletRequest = null
 	def getUrl:List[String] = List("test")
+	def getParameter(name:String):String = "hallo"
   }
   
   private class SampleHandler extends RequestHandler {

@@ -12,7 +12,7 @@ class ApplicationHandler extends RequestHandler {
 
   def process(request: Request): Response = {
     val response = new SimpleResponse("output.html")
-    
+  
     // Get a Twitter model to read from Twitter
     val twitter = ModelFactory.getTwitterModel()
     response.setParameter("content", twitter.readLatest());

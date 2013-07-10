@@ -8,6 +8,7 @@ import java.io.InputStreamReader
 import scala.collection.mutable.HashMap
 import java.io.StringWriter
 import org.apache.velocity.app.Velocity
+import org.apache.velocity.tools.generic.EscapeTool
 
 /**
  * The ReponsereRenderer takes a ResponseObject and renders the template with the
@@ -21,7 +22,7 @@ class ResponseRenderer(res: HttpServletResponse) {
   def send(response: Response) = {
     val out: PrintWriter = res.getWriter();
     val reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(response.getTemplate))
-
+    context.put("esc", new EscapeTool());
     response.getParameters.foreach { p =>
       context.put(p._1, p._2)
     }

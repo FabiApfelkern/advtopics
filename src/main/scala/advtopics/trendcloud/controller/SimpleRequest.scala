@@ -9,4 +9,7 @@ import javax.servlet.http.HttpServletRequest
 class SimpleRequest(url: List[String], req: HttpServletRequest) extends Request {
   def getReq: HttpServletRequest = req
   def getUrl: List[String] = url
+  def getParameter(name:String): String = {
+    req.getParameter(name)
+  }
 }
