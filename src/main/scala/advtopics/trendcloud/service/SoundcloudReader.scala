@@ -6,12 +6,11 @@ import com.soundcloud.api.Request
 import com.soundcloud.api.Endpoints
 import org.apache.http.HttpStatus
 import com.soundcloud.api.Http
-
 import com.codahale.jerkson.Json._
-
 import advtopics.trendcloud.models.SoundcloudTrack
+import advtopics.trendcloud.Loggable
 
-class SoundcloudReader extends ServiceReader {
+class SoundcloudReader extends ServiceReader with Loggable {
 
   /**
    * clientId for our app
@@ -29,10 +28,10 @@ class SoundcloudReader extends ServiceReader {
   /**
    * Fetches the music from soundcloud by a given keyword.
    * @param keyword
-   * @return A list auf SoundCloudTrack models. Can be empty!
+   * @return A list of SoundCloudTrack models. Can be empty!
    */
   def fetch(keyword:String): List[SoundcloudTrack] ={ 
-     //logger.info("Search for sounds on SoundCloud with keyword: " +keyword)
+    logger.info("Search for sounds on SoundCloud with keyword: " +keyword)
     val resource = Request.to(Endpoints.TRACKS + ".json?q=" + keyword)
     val resp = wrapper.get(resource)
     //logger.info("Statuscode: "+resp.getStatusLine().getStatusCode())
@@ -42,14 +41,9 @@ class SoundcloudReader extends ServiceReader {
       //logger.info(sounds)
       return sounds
     } else {
-      //logger.error("Something went wrong!")
+      logger.error("Something went wrong!")
       return List()
     }
 
   }
-  
-  def fetch(): String = {
-    "Test Twitter!"
-  }
-  
 }

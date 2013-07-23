@@ -1,5 +1,6 @@
 package advtopics.trendcloud.service
 import com.google.inject.AbstractModule
+import com.google.inject.name.Names
 
 /**
  * This is the Guice configuration for 
@@ -14,6 +15,8 @@ class ServiceBinder extends AbstractModule {
     // Bind the real TwitterReader
     bind(classOf[ServiceReader]).to(classOf[TwitterReader])
     //bind(classOf[ServiceReader]).to(classOf[FakeTwitterReader])
+    bind(classOf[ServiceReader]).annotatedWith(Names.named("twitterReader")).to(classOf[TwitterReader])
+    bind(classOf[ServiceReader]).annotatedWith(Names.named("soundcloudReader")).to(classOf[SoundcloudReader])
   }
   
 } 
