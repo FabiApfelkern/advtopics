@@ -9,7 +9,7 @@ class SoundcloudModel{
   @Inject
   var reader: SoundcloudReaderInterface = null
   
-  def readSounds(): List[SoundcloudTrack] = {
-    reader.fetch("test")
+  def readSounds(keyword:String): List[SoundcloudTrack] = {
+    reader.fetch(keyword)
   }
 }

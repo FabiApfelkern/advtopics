@@ -9,17 +9,18 @@ import com.soundcloud.api.Http
 import com.codahale.jerkson.Json._
 import advtopics.trendcloud.models.SoundcloudTrack
 import advtopics.trendcloud.Loggable
+import advtopics.trendcloud.models.SoundcloudTrack
 
 class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
 
   /**
    * clientId for our app
    */
-  val clientId: String = "bacfabc4b3549c008c52ec19dd8576d3"
+  val clientId: String = "bcf29defbcb57dff0d6f907f288f0790"
   /**
    * client secret for our app
    */
-  val clientSec: String = "2ef79427f8124d7d15348b4406899642"
+  val clientSec: String = "c2c5351bafa0ad7cfd3f0a77eadcbf00"
   /**
    *   API wrapper
    */  
@@ -34,16 +35,18 @@ class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
     logger.info("Search for sounds on SoundCloud with keyword: " +keyword)
     val resource = Request.to(Endpoints.TRACKS + ".json?q=" + keyword)
     val resp = wrapper.get(resource)
-    //logger.info("Statuscode: "+resp.getStatusLine().getStatusCode())
+    var sounds:List[SoundcloudTrack] = null
     if(resp.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
-      val jsonInput = Http.formatJSON(Http.getString(resp))
-      val sounds:List[SoundcloudTrack] = parse[List[SoundcloudTrack]](jsonInput)
-      //logger.info(sounds)
-      return sounds
+      logger.info("Statuscode: "+resp.getStatusLine().getStatusCode())
+      val jsonInput = Http.getJSON(resp)
+      logger.info(Http.getJSON(resp))
+     // sounds = parse[List[SoundcloudTrack]](jsonInput)
+      sounds
     } else {
       logger.error("Something went wrong!")
-      return List()
+      List()
     }
+    
 
   }
 }

@@ -14,7 +14,7 @@ class SoundcloudReaderTest {
 
   @Test
   def fetchTest: Unit = {
-	if(soundcloudModel.readSounds().isEmpty)
+	if(soundcloudModel.readSounds("test").isEmpty)
 	  assert(true)
   }
   

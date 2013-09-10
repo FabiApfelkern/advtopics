@@ -23,10 +23,10 @@ object ModelFactory extends Loggable{
     twitter
   }
   
-  def getSoundcloudModel(): Soundcloud = {
+  def getSoundcloudModel(): SoundcloudModel = {
     logger.info("return soundcloud model")
     val injector = Guice.createInjector(new ServiceBinder)
-    val soundcloud = injector.getInstance(classOf[Soundcloud])
+    val soundcloud = injector.getInstance(classOf[SoundcloudModel])
     soundcloud
   } 
 }

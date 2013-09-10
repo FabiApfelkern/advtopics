@@ -36,7 +36,9 @@ class Soundcloud extends Loggable{
     val resp = wrapper.get(resource)
     logger.info("Statuscode: "+resp.getStatusLine().getStatusCode())
     if(resp.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+      logger.info(Http.getString(resp))
       val jsonInput = Http.formatJSON(Http.getString(resp))
+      
       val sounds:List[SoundcloudTrack] = parse[List[SoundcloudTrack]](jsonInput)
       logger.info(sounds)
       return sounds
