@@ -2,10 +2,14 @@ package advtopics.trendcloud.service
 
 import com.google.inject.Inject
 import com.google.inject.name.Named
+import advtopics.trendcloud.models.SoundcloudTrack
 
-class SoundcloudModel @Inject() (@Named("soundcloudReader") reader:ServiceReader){
+class SoundcloudModel{
 
-  def readSounds(): String = {
+  @Inject
+  var reader: SoundcloudReaderInterface = null
+  
+  def readSounds(): List[SoundcloudTrack] = {
     reader.fetch("test")
   }
 }

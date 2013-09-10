@@ -15,8 +15,8 @@ class SoundcloudHandler extends RequestHandler {
   def process(request: Request): Response = {
     val response = new SimpleResponse("output.html")
     // Get a Soundcloud object to read from soundcloud
-    val soundcloud = ModelFactory.getSoundcloudModel()
-    response.setParameter("content", soundcloud.searchForSoundsByKeyword("#Berlin"));
+   // val soundcloud = ModelFactory.getSoundcloudModel()
+    //response.setParameter("content", soundcloud.searchForSoundsByKeyword("#Berlin"));
 
     response
   }

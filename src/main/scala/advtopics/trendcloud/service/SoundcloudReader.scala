@@ -10,7 +10,7 @@ import com.codahale.jerkson.Json._
 import advtopics.trendcloud.models.SoundcloudTrack
 import advtopics.trendcloud.Loggable
 
-class SoundcloudReader extends ServiceReader with Loggable {
+class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
 
   /**
    * clientId for our app

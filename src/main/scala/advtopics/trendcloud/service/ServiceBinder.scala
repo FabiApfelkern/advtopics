@@ -1,6 +1,9 @@
 package advtopics.trendcloud.service
 import com.google.inject.AbstractModule
 import com.google.inject.name.Names
+import advtopics.trendcloud.models.SoundcloudTrack
+import advtopics.trendcloud.Loggable
+import com.google.inject.TypeLiteral
 
 /**
  * This is the Guice configuration for 
@@ -9,14 +12,15 @@ import com.google.inject.name.Names
  * which property marked as injected.
  * 
  */
-class ServiceBinder extends AbstractModule {
+class ServiceBinder extends AbstractModule with Loggable{
 
   override protected def configure() = {
+    logger.info("Bind service readers")
     // Bind the real TwitterReader
-    bind(classOf[ServiceReader]).to(classOf[TwitterReader])
-    //bind(classOf[ServiceReader]).to(classOf[FakeTwitterReader])
-    bind(classOf[ServiceReader]).annotatedWith(Names.named("twitterReader")).to(classOf[TwitterReader])
-    bind(classOf[ServiceReader]).annotatedWith(Names.named("soundcloudReader")).to(classOf[SoundcloudReader])
+    bind(classOf[TwitterReaderInterface]).to(classOf[TwitterReader])
+    // Bind the real SoundcloudReader
+    bind(classOf[SoundcloudReaderInterface]).to(classOf[SoundcloudReader])
+    logger.info("binding finished")
   }
   
 } 

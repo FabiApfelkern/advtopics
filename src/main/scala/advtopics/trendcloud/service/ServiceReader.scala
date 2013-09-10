@@ -3,6 +3,6 @@ package advtopics.trendcloud.service
 /**
  * Interface for a Web Service reader
  */
-trait ServiceReader {
-	def fetch(anyType:Object): Object
+trait ServiceReader[T, R] {
+	def fetch(anyType:T): R
 }

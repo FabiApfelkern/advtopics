@@ -6,7 +6,7 @@ import twitter4j.TwitterFactory
 /**
  * Class which handels the fetching of twitter trends.
  */
-class TwitterReader extends ServiceReader with Loggable{
+class TwitterReader extends TwitterReaderInterface with Loggable{
 
   val twitter = TwitterFactory.getSingleton()
 

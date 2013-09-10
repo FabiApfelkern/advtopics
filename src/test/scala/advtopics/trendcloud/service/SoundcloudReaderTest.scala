@@ -5,16 +5,17 @@ import org.junit.Test
 
 class SoundcloudReaderTest {
 
-  private var scReader:FakeTwitterReader = null
+  var soundcloudModel:SoundcloudModel = null
   
   @Before
   def instantiate: Unit = {
-	scReader = new FakeTwitterReader
+	soundcloudModel = ModelFactoryTest.getSoundcloudModelTest()
   }
 
   @Test
   def fetchTest: Unit = {
-	scReader.fetch.equals("Hallo Fake Twitter")
+	if(soundcloudModel.readSounds().isEmpty)
+	  assert(true)
   }
   
 }
