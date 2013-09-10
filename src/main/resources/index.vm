@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bootstrap 101 Template</title>
+	<title>TrendCloud</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap -->
 	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="static/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
-	<h1>Hello, world!</h1>
-	<ul>
-	#foreach( $a in $array )
-	    <li>$a</li>
-	#end
-	</ul>
+
+
+	<div class="container">
+	    <div class="row">
+			<div class="span12 myDiv myHeader"><h1><span class="myContent">
+				<img src="static/img/trendcloud.svg" alt="Logo" width="200"/> TrendCloud
+			</span></h1></div>
+			#foreach( $a in $array )
+			   <div class="span12 myDiv btn-info"><h2><span class="myContent">$a</span></h2></div>
+			#end	
+	    </div>
+	</div>
 
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>

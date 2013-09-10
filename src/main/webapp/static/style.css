@@ -1,0 +1,18 @@
+body {
+	
+}
+
+.myDiv {
+	margin-top: 20px;
+	border: 1px solid #DDDDDD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+}
+
+.myHeader {
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.myContent {
+	margin-left: 20px;
+}
