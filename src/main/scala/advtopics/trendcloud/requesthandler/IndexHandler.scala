@@ -1,25 +1,25 @@
 package advtopics.trendcloud.requesthandler
 
+import advtopics.trendcloud.controller.Handler
+import advtopics.trendcloud.controller.SimpleResponse
+import advtopics.trendcloud.controller.interfaces.Request
 import advtopics.trendcloud.controller.interfaces.RequestHandler
 import advtopics.trendcloud.controller.interfaces.Response
-import advtopics.trendcloud.controller.interfaces.Request
-import advtopics.trendcloud.controller.SimpleResponse
-import advtopics.trendcloud.controller.Handler
-import advtopics.trendcloud.models.Twitter
-import advtopics.trendcloud.models.Twitter
+import advtopics.trendcloud.service.ModelFactory
+import advtopics.trendcloud.service.TwitterModel
+import advtopics.trendcloud.Loggable
 
 @Handler(url="")
-class IndexHandler extends RequestHandler {
+class IndexHandler extends RequestHandler with Loggable{
 
   def process(request: Request): Response = {
+    logger.info("Index Handler")
     val response = new SimpleResponse("index.vm")
     
-    //var output:Array[String] = Array("Eins", "Zwei", "Drei", "Vier")
     val woeidOfBerlin:Integer = 638242
-    val twitter = new Twitter
-    var output:Array[String] = twitter.getPlaceTrendsByWOEID(woeidOfBerlin)
+    val twitterModel:TwitterModel = ModelFactory.getTwitterModel()
+    var output:Array[String] = twitterModel.readLatest(woeidOfBerlin)
     response.setParameter("array", output)
-
     response
   }
   

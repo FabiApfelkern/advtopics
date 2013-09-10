@@ -6,28 +6,27 @@ import twitter4j.TwitterFactory
 /**
  * Class which handels the fetching of twitter trends.
  */
-class TwitterReader extends ServiceReader {
+class TwitterReader extends TwitterReaderInterface with Loggable{
 
   val twitter = TwitterFactory.getSingleton()
 
   /**
    * Fetch the trends of twitter by a given where on earth id (woeid) and returns them
    * as a array of strings.
+   * @param An where on earth id
+   * @return An array of string with the trends. Can be empty!
    */
   def fetch(woeid:Integer): Array[String] = {
-    //logger.info("Search for trends with woid: " +woeid)
-    val trends = twitter.getPlaceTrends(woeid)
-    var trendsAsString: Array[String] = new Array[String](trends.getTrends().length)
-    for (x <- trends.getTrends()) {
-      //logger.info("Trend: " + x.getName())
-      trendsAsString.+(x.getName())
-    }
-    trendsAsString
+    logger.info("Search for trends with woid: " +woeid)
+	  val trends = twitter.getPlaceTrends(woeid)
+	  var trendsAsString:Array[String] = new Array[String](trends.getTrends().length)
+	  var i:Integer = 0;
+	  for(x <- trends.getTrends() ){
+	    logger.info("Trend: "+x.getName())
+	    trendsAsString(i) = x.getName()
+	    i += 1
+	  }
+	  trendsAsString
   }
   
-  def fetch(): String = {
-    //val woeidOfBerlin:Integer = 638242
-    //fetch(woeidOfBerlin).toString()
-    "Test twitter!"
-  }
 }

@@ -1,8 +1,9 @@
 package advtopics.trendcloud.service
 
 import com.google.inject.Guice
-import com.google.inject.Injector 
+import com.google.inject.Injector
 import advtopics.trendcloud.models.Soundcloud
+import advtopics.trendcloud.Loggable
 
 /**
  * This Model factory returns specific objects to
@@ -13,18 +14,19 @@ import advtopics.trendcloud.models.Soundcloud
  * in production mode. For testing purposes it is advisable
  * to inject a mocked service class. 
  */
-object ModelFactory {
+object ModelFactory extends Loggable{
 
   def getTwitterModel(): TwitterModel = {
     val injector = Guice.createInjector(new ServiceBinder)
     val twitter = injector.getInstance(classOf[TwitterModel])
+    logger.info("return twitter model")
     twitter
   }
   
   def getSoundcloudModel(): Soundcloud = {
+    logger.info("return soundcloud model")
     val injector = Guice.createInjector(new ServiceBinder)
     val soundcloud = injector.getInstance(classOf[Soundcloud])
     soundcloud
-  }
-  
+  } 
 }

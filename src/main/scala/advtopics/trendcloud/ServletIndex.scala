@@ -1,17 +1,15 @@
 package advtopics.trendcloud
 
-import javax.servlet.http.HttpServlet
-import javax.servlet.http.HttpServletRequest
-import javax.servlet.http.HttpServletResponse
-import scala.collection.immutable.HashMap
-import collection.JavaConversions._
-import advtopics.view.ResponseRenderer
+import scala.collection.JavaConversions.mapAsScalaMap
+
 import advtopics.trendcloud.controller.DefaultController
 import advtopics.trendcloud.controller.HandlerLoader
 import advtopics.trendcloud.controller.SimpleRequest
 import advtopics.trendcloud.controller.interfaces.RequestHandler
-import advtopics.trendcloud.models.Soundcloud
-import advtopics.trendcloud.models.Twitter
+import advtopics.view.ResponseRenderer
+import javax.servlet.http.HttpServlet
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 /**
  * This is the main entry point, all HTTP requests are processed here

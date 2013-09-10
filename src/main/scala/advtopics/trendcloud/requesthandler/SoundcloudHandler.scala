@@ -22,8 +22,6 @@ class SoundcloudHandler extends RequestHandler with Loggable {
     response.setParameter("url", request.getParameter("tag"));
     logger.info(request.getReq.getParameter("tag"));
     response.setParameter("content", "test");
-    //response.setParameter("content", soundcloud.searchForSoundsByKeyword("#Berlin"));
-
     response
   }
 
