@@ -17,14 +17,16 @@ class TwitterReader extends TwitterReaderInterface with Loggable{
    * @return An array of string with the trends. Can be empty!
    */
   def fetch(woeid:Integer): Array[String] = {
-    logger.info("Search for trends with woeid: " +woeid)
-    val trends = twitter.getPlaceTrends(woeid)
-    var trendsAsString: Array[String] = new Array[String](trends.getTrends().length)
-    for (x <- trends.getTrends()) {
-      //logger.info("Trend: " + x.getName())
-      trendsAsString.+(x.getName())
-    }
-    trendsAsString
+    logger.info("Search for trends with woid: " +woeid)
+	  val trends = twitter.getPlaceTrends(woeid)
+	  var trendsAsString:Array[String] = new Array[String](trends.getTrends().length)
+	  var i:Integer = 0;
+	  for(x <- trends.getTrends() ){
+	    logger.info("Trend: "+x.getName())
+	    trendsAsString(i) = x.getName()
+	    i += 1
+	  }
+	  trendsAsString
   }
   
 }
