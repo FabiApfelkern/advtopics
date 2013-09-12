@@ -12,13 +12,10 @@
 	<img src="static/img/trendcloud.svg" alt="Logo" />
 	<div class="trends"> 
 		#foreach( $a in $array )
-		   <div><a class="trend trend$velocityCount" href="#">$a</a></div>
+		   <div><a class="trend trend$velocityCount" href="https://soundcloud.com/search?q=$a">$a</a></div>
 		#end
 	</div>
 </div>
 
 </body>
 </html>
-
-
-
