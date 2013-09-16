@@ -9,8 +9,6 @@ import com.soundcloud.api.Request
 import advtopics.trendcloud.Loggable
 import advtopics.trendcloud.models.SoundcloudTrack
 import com.codahale.jerkson.ParsingException
-import org.codehaus.jackson.map.ObjectMapper
-import advtopics.trendcloud.models.SoundcloudTrack
 
 class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
 
@@ -40,13 +38,15 @@ class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
       val jsonInput = Http.formatJSON(Http.getString(resp))
       try {
         val sounds: List[SoundcloudTrack] = parse[List[SoundcloudTrack]](jsonInput.mkString)
+        return sounds
       }
       catch {
         case ex: ParsingException => println(ex.getMessage())
+        return List()
       }
       //logger.info(sounds)
       //return sounds
-      return List()
+      
     } else {
       logger.error("Something went wrong: " + resp.getStatusLine().getStatusCode())
       return List()
