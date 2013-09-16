@@ -10,6 +10,6 @@ class SoundcloudModel{
   var reader: SoundcloudReaderInterface = null
   
   def readSounds(keyword:String): List[SoundcloudTrack] = {
-    reader.fetch(keyword)
+    reader.fetch("marina")
   }
 }
