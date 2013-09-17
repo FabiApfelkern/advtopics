@@ -1,18 +1,69 @@
 body {
-	
+	font-family: Arial,sans-serif;
 }
 
-.myDiv {
-	margin-top: 20px;
-	border: 1px solid #DDDDDD;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+#main {
+	text-align: center;
 }
 
-.myHeader {
-	padding-bottom: 20px;
-	padding-top: 20px;
+.headline {
+	font-size: 50px;
+	font-weight: bold;
 }
 
-.myContent {
-	margin-left: 20px;
+.trends {
+	position: relative;
+	bottom: 280px;
+}
+
+.trend {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	position: relative;
+	padding-left: 20px;
+	background-image: url("img/play.png");
+	background-repeat: no-repeat;
+}
+
+
+.trend1 {
+	left: 40px;
+}
+
+.trend2 {
+	left: -20px;
+}
+
+.trend3 {
+}
+
+.trend4 {
+	left: 70px;
+}
+
+.trend5 {
+	left: -90px;
+}
+
+.trend6 {
+
+}
+
+.trend7 {
+	left: -150px;
+}
+
+.trend8 {
+	left: -45px;
+}
+
+.trend9 {
+	left: -75px
+}
+
+.trend10 {
+	left: -20px;
 }
