@@ -29,4 +29,24 @@ case class SoundcloudTrack(
   //val comment_count: Integer,
   val attachments_uri: String
   ) {
+
+  def getTitle() : String = {
+    title
+  }
+  
+  def getUri(): String = {
+    uri
+  }
+  
+  def getId(): Integer ={
+    id
+  }
+  
+  def getUserId(): Integer = {
+    user_id
+  }
+  
+  def getAttachmentsUri: String = {
+    attachments_uri
+  }
 }

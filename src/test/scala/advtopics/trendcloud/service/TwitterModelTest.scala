@@ -14,7 +14,7 @@ class TwitterModelTest {
 
   @Before
   def instantiate: Unit = {
-    mockTwitterModel = mock(classOf[TwitterModel])
+   /* mockTwitterModel = mock(classOf[TwitterModel])
     when(mockTwitterModel.readLatest(woeidOfBerlin)).thenAnswer(new Answer [Array[String]] {
 
       def answer(invocation: InvocationOnMock): Array[String] = {
@@ -22,7 +22,7 @@ class TwitterModelTest {
       }
 
     })
-
+	*/
   }
 
   @Test

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 import junit.framework.Assert
 
+@Ignore
 class FrontendTest {
   
   def url = "http://localhost:8080/beleg/"
@@ -25,6 +26,7 @@ class FrontendTest {
   }
 
   @Test
+  @Ignore
   def HomepageTest = {
     driver.get(url)
     val title = driver.getTitle()
