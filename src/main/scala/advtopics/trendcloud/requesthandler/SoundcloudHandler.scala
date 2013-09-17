@@ -15,7 +15,7 @@ class SoundcloudHandler extends RequestHandler with Loggable {
   
   
   def process(request: Request): Response = {
-    val response = new SimpleResponse("index.vm")
+    val response = new SimpleResponse("soundcloud.vm")
 	logger.info("TAG: " +request.getParameter("tag"));
     // Get a Soundcloud object to read from soundcloud
     val soundcloud = ModelFactory.getSoundcloudModel()
@@ -23,9 +23,10 @@ class SoundcloudHandler extends RequestHandler with Loggable {
     logger.info("readed sounds");
     if(sounds != null)
     {
-    	logger.info("read sounds size: " +sounds.size);
+    	logger.info("read sounds size: " +sounds.size)
+    	logger.info("first sound id: " +sounds(0).id)
     }
-    //response.setParameter("array", sounds)
+    response.setParameter("array", sounds.toArray)
     response
   }
 
