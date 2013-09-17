@@ -16,7 +16,7 @@
 				<img src="static/img/trendcloud.svg" alt="Logo" width="200"/> TrendCloud
 			</span></h1></div>
 			#foreach( $a in $array )
-			   <div class="span12 myDiv btn-info"><h2><span class="myContent">$a</span></h2></div>
+			   <div class="span12 myDiv btn-info"><h2><span class="myContent">$a[4]</span></h2></div>
 			#end	
 	    </div>
 	</div>
