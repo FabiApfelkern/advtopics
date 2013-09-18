@@ -3,26 +3,21 @@
 <head>
 	<title>TrendCloud</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Bootstrap -->
-	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="static/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
 
-
-	<div class="container">
-	    <div class="row">
-			<div class="span12 myDiv myHeader"><h1><span class="myContent">
-				<img src="static/img/trendcloud.svg" alt="Logo" width="200"/> TrendCloud
-			</span></h1></div>
+<div id="main">
+	<div class="headline">TrendCloud</div>
+	<img src="static/img/trendcloud.svg" alt="Logo" />
+	<div class="trends">
 			#foreach( $a in $array )
-			   <div class="span12 myDiv btn-info"><h2><span class="myContent"><a href="$a.getUri()/stream?client_id=bcf29defbcb57dff0d6f907f288f0790">$a.getTitle()</a></span></h2></div></span></h2></div>
+				#if( $velocityCount <= 10 )
+			        <div><a class="trend trend$velocityCount" href="$a.getUri()/stream?client_id=bcf29defbcb57dff0d6f907f288f0790">$a.getTitle()</a></div>
+			    #end
 			#end	
-	    </div>
 	</div>
-
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="static/bootstrap/js/bootstrap.min.js"></script>
+</div>
 </body>
 </html>
 
