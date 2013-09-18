@@ -11,7 +11,8 @@ import advtopics.trendcloud.Loggable
 
 @Handler(url="")
 class IndexHandler extends RequestHandler with Loggable{
-
+  
+ 
   def process(request: Request): Response = {
     logger.info("Index Handler")
     val response = new SimpleResponse("index.vm")

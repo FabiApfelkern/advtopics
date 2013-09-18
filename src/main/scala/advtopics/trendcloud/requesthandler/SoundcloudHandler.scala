@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger
 
 @Handler(url="soundcloud")
 class SoundcloudHandler extends RequestHandler with Loggable {
-  
+ 
   
   def process(request: Request): Response = {
     val response = new SimpleResponse("soundcloud.vm")

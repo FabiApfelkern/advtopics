@@ -169,6 +169,8 @@
 	<artifactId>httpclient</artifactId>
 	<version>4.2.5</version>
 </dependency>
+      
+            
 	</dependencies>
 
 	<build>

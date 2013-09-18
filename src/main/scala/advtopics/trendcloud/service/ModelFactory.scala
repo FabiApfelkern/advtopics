@@ -2,7 +2,6 @@ package advtopics.trendcloud.service
 
 import com.google.inject.Guice
 import com.google.inject.Injector
-import advtopics.trendcloud.models.Soundcloud
 import advtopics.trendcloud.Loggable
 
 /**
