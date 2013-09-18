@@ -2,6 +2,7 @@ package advtopics.trendcloud.service
 
 import org.junit.Before
 import org.junit.Test
+import advtopics.trendcloud.models.SoundcloudModel
 
 class SoundcloudReaderTest {
 

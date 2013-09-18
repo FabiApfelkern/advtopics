@@ -1,7 +1,9 @@
-package advtopics.trendcloud.service
+package advtopics.trendcloud.models
 
 import com.google.inject.Inject
 import advtopics.trendcloud.Loggable
+import advtopics.trendcloud.service.TwitterReaderInterface
+import com.google.inject.Inject
 
 /**
  * This is model for encapsulating all data

@@ -6,6 +6,7 @@ import org.mockito.Mockito._
 import com.google.inject.Inject
 import org.mockito.stubbing.Answer
 import org.mockito.invocation.InvocationOnMock
+import advtopics.trendcloud.models.TwitterModel
 
 class TwitterReaderTest {
 

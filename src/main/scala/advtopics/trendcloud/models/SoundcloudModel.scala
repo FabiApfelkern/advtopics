@@ -1,8 +1,9 @@
-package advtopics.trendcloud.service
+package advtopics.trendcloud.models
 
 import com.google.inject.Inject
-import com.google.inject.name.Named
-import advtopics.trendcloud.models.SoundcloudTrack
+import advtopics.trendcloud.service.SoundcloudReaderInterface
+import com.google.inject.Inject
+import org.codehaus.jackson.annotate.JsonIgnoreProperties
 
 class SoundcloudModel{
 

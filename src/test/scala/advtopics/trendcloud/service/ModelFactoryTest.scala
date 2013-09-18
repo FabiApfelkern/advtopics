@@ -1,6 +1,8 @@
 package advtopics.trendcloud.service
 
 import com.google.inject.Guice
+import advtopics.trendcloud.models.TwitterModel
+import advtopics.trendcloud.models.SoundcloudModel
 
 object ModelFactoryTest {
 

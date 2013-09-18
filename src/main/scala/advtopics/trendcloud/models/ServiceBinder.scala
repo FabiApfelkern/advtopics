@@ -1,9 +1,10 @@
-package advtopics.trendcloud.service
+package advtopics.trendcloud.models
 import com.google.inject.AbstractModule
-import com.google.inject.name.Names
-import advtopics.trendcloud.models.SoundcloudTrack
 import advtopics.trendcloud.Loggable
-import com.google.inject.TypeLiteral
+import advtopics.trendcloud.service.SoundcloudReader
+import advtopics.trendcloud.service.SoundcloudReaderInterface
+import advtopics.trendcloud.service.TwitterReader
+import advtopics.trendcloud.service.TwitterReaderInterface
 
 /**
  * This is the Guice configuration for 

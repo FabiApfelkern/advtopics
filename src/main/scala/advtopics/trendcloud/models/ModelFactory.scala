@@ -1,7 +1,6 @@
-package advtopics.trendcloud.service
+package advtopics.trendcloud.models
 
 import com.google.inject.Guice
-import com.google.inject.Injector
 import advtopics.trendcloud.Loggable
 
 /**

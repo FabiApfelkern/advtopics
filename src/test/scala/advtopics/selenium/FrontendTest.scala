@@ -10,8 +10,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 import junit.framework.Assert
+import com.thoughtworks.selenium.Selenium
 
-@Ignore
+//@Ignore
 class FrontendTest {
   
   def url = "http://localhost:8080/beleg/"
@@ -26,12 +27,19 @@ class FrontendTest {
   }
 
   @Test
-  @Ignore
   def HomepageTest = {
     driver.get(url)
     val title = driver.getTitle()
     assertEquals("TrendCloud", title)
 
+    val link:WebElement = driver.findElement(By.id("trend1"))
+    val linkText = link.getText
+    
+    link.click()
+ 
+    val location = driver.getCurrentUrl()
+    assertTrue(location.contains(linkText))
+    
   }
 
   @After

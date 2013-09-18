@@ -5,7 +5,7 @@ import advtopics.trendcloud.controller.interfaces.RequestHandler
 import advtopics.trendcloud.controller.interfaces.Request
 import advtopics.trendcloud.controller.interfaces.Response
 import advtopics.trendcloud.controller.SimpleResponse
-import advtopics.trendcloud.service.ModelFactory
+import advtopics.trendcloud.models.ModelFactory
 import advtopics.trendcloud.Loggable
 import org.apache.logging.log4j.Logger
 
