@@ -10,6 +10,9 @@ import advtopics.trendcloud.Loggable
 import advtopics.trendcloud.models.SoundcloudTrack
 import com.codahale.jerkson.ParsingException
 
+/**
+ * Class which handels the fetching of soundcloud sounds
+ */
 class SoundcloudReader extends SoundcloudReaderInterface with Loggable {
 
   /**

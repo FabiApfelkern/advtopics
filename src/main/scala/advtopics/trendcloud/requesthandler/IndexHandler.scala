@@ -13,6 +13,11 @@ import advtopics.trendcloud.models.ModelFactory
 @Handler(url="")
 class IndexHandler extends RequestHandler with Loggable{
   
+  /**
+   * Process an request for the index url.
+   * @param request a given Request object
+   * @return a response object.
+   */
   def process(request: Request): Response = {
     logger.info("Index Handler")
     val response = new SimpleResponse("index.vm")

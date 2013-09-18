@@ -13,7 +13,11 @@ import org.apache.logging.log4j.Logger
 @Handler(url="soundcloud")
 class SoundcloudHandler extends RequestHandler with Loggable {
  
-  
+  /**
+   * Process an request for the url /soundcloud
+   * @param request a given request object
+   * @return a response object which is handled by the controller
+   */
   def process(request: Request): Response = {
     val response = new SimpleResponse("soundcloud.vm")
 	logger.info("TAG: " +request.getParameter("tag"));

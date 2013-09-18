@@ -14,6 +14,10 @@ import advtopics.trendcloud.Loggable
  */
 object ModelFactory extends Loggable{
 
+  /**
+   * Returns an instance of a TwitterModel class.
+   * @return A new TwitterModel object.
+   */
   def getTwitterModel(): TwitterModel = {
     val injector = Guice.createInjector(new ServiceBinder)
     val twitter = injector.getInstance(classOf[TwitterModel])
@@ -21,6 +25,10 @@ object ModelFactory extends Loggable{
     twitter
   }
   
+  /**
+   * Returns an instance of a SoundcloudModel class.
+   * @return A new SoundcloudModel object. 
+   */
   def getSoundcloudModel(): SoundcloudModel = {
     logger.info("return soundcloud model")
     val injector = Guice.createInjector(new ServiceBinder)
