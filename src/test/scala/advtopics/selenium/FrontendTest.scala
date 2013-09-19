@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import junit.framework.Assert
 import com.thoughtworks.selenium.Selenium
 
-//@Ignore
+@Ignore
 class FrontendTest {
   
   def url = "http://localhost:8080/beleg/"
